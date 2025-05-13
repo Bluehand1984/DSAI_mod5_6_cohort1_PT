@@ -1,1 +1,16 @@
-<h2>Web Application</h2>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web App Flask</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+<div class=“container”>
+    <h1>Web Application</h1>
+    <p class="small-text">{{r}}</p>
+    <!-- Your other HTML content goes here -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</div>
+</body>
