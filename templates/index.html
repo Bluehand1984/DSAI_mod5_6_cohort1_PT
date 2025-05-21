@@ -12,10 +12,11 @@
     <p class="small-text">{{r}}</p>
     <!-- Your other HTML content goes here -->
      
-        <form action="/gemini" method="post">
-            <input type="submit" value="Chatbot by Gemini">
+        <form action="/main" method="post">
+            <p>Please enter yuour user name: </p>
+            <input type="text" name = q >
+            <input type="submit" value="Enter">
         </form>
-
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </div>
