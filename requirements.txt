@@ -2,3 +2,5 @@ flask
 gunicorn
 google.generativeai
 sqlite3
+requests
+google

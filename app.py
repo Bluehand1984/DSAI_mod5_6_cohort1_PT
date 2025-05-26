@@ -5,11 +5,17 @@ import sqlite3
 import datetime
 import os
 import requests
+from google import genai
 
-
-genai.configure(api_key= "api key!")
-model = genai.GenerativeModel("gemini-2.0-flash")
+gemini_telegram_token = os.getenv('GEMINI_TELEGRAM_TOKEN')
+genmini_api_key = os.getenv('GEMINI_API_KEY')
+# genai.configure(api_key= "api key!")
+# model = genai.GenerativeModel("gemini-2.0-flash")
 app = Flask(__name__)
+
+### Initialize the Google Gemini client from Thomas
+genmini_client = genai.Client(api_key=genmini_api_key)
+genmini_model = "gemini-2.0-flash"
 
 @app.route("/",methods=["GET","POST"])
 def index():
@@ -95,7 +101,7 @@ def start_telegram():
     print('webhook:', webhook_response)
     if webhook_response.status_code == 200:
         # set status message
-        status = "The telegram bot is running. Please check with the telegram bot. @gemini_tt_bot"
+        status = "The telegram bot is running. Please check with the telegram bot. @DSAI_Bluehand_Bot"
     else:
         status = "Failed to start the telegram bot. Please check the logs."
     
